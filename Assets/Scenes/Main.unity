@@ -193,7 +193,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 1146606310097478963, guid: 08b9596c98f080549b3e68ff4f207a73, type: 3}
-  spawnTimeBetween: 5
-  spawnTimeFirst: 3
+  spawnTimeBetween: 2
+  spawnTimeFirst: 1
   rangeX: 50
   rangeY: 50
 --- !u!4 &2115477307 stripped
