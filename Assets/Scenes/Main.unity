@@ -243,8 +243,8 @@ MonoBehaviour:
   turret: {fileID: 1146606310097478963, guid: 08b9596c98f080549b3e68ff4f207a73, type: 3}
   spawnTimeBetween: 2
   spawnTimeFirst: 1
-  rangeX: 50
-  rangeY: 50
+  rangeX: 45
+  rangeY: 45
 --- !u!4 &2115477307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5566323006212908194, guid: f8e3f30a86864e9459eb083f60621393, type: 3}
