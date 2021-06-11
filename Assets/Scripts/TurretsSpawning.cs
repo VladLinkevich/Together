@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TurretsSpawning : MonoBehaviour
 {
+    private Transform mapTransform;
+
     public GameObject turret;
 
     public float spawnTimeBetween;
@@ -15,9 +17,12 @@ public class TurretsSpawning : MonoBehaviour
     private Coroutine spawnCoroutine;
 
     private Vector2 lastSpawnPosition;
+    private GameObject lastSpawnObject;
 
     void Start()
     {
+        mapTransform = GetComponent<Transform>();
+        
         startSpawnTurrets();
     }
 
@@ -40,7 +45,8 @@ public class TurretsSpawning : MonoBehaviour
 
         while(true)
         {
-            Instantiate(turret, getRandomPosition(), Quaternion.identity);
+            lastSpawnObject = Instantiate(turret, getRandomPosition(), Quaternion.identity);
+            lastSpawnObject.transform.parent = mapTransform;
             yield return new WaitForSeconds(spawnTimeBetween);
         }
     }
