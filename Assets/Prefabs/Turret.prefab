@@ -71,9 +71,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368dc677da966a846906d60b29e83af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 193453375323644461, guid: a6680cb04cd47db459f6d1e12e8b6e8c, type: 3}
+  cooldown: 1
   level: 1
-  offsetX: 0
-  offsetY: 0
+  offset: {x: 0, y: 0}
 --- !u!1 &8024437799430269322
 GameObject:
   m_ObjectHideFlags: 0

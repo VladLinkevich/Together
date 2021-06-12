@@ -8,7 +8,7 @@ public class TurretsJoint : MonoBehaviour
 
     public TurretManager startTurret;
 
-    private List<TurretManager> turrets;
+    public List<TurretManager> turrets;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
