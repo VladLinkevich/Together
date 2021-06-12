@@ -28,7 +28,7 @@ public class ShootHandler : MonoBehaviour
         {
             foreach (TurretManager turret in turretsJoint.turrets)
             {
-                turret.shoot();
+                turret.turretShooting.shoot();
             }
         }
     }
