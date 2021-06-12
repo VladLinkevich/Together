@@ -8,7 +8,7 @@ public class TurretsSpawning : MonoBehaviour
 
     public static int maxLevelSpawningTurrets;
 
-    public GameObject turret;
+    public GameObject[] turrets;
 
     public float spawnTimeBetween;
     public float spawnTimeFirst;
@@ -55,7 +55,7 @@ public class TurretsSpawning : MonoBehaviour
 
         while(true)
         {
-            lastSpawnObject = Instantiate(turret, getRandomPosition(), Quaternion.identity);
+            lastSpawnObject = Instantiate(turrets[Random.Range(0, turrets.Length)], getRandomPosition(), Quaternion.identity);
             lastSpawnObject.transform.parent = mapTransform;
 
             countSpawningTurrets++;

@@ -13,7 +13,7 @@ public class TurretShooting : MonoBehaviour
     private Transform turretTransform;
 
     public GameObject bullet;
-    public Transform bulletSpawnPoint;
+    public Transform[] bulletSpawnPoints;
     public float cooldown;
     public turretType type;
 
@@ -38,7 +38,7 @@ public class TurretShooting : MonoBehaviour
                 if (currentCooldown >= cooldown)
                 {
                     currentCooldown = 0;
-                    BulletMovement bulletMov = Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity).GetComponent<BulletMovement>();
+                    BulletMovement bulletMov = Instantiate(bullet, bulletSpawnPoints[0].position, Quaternion.identity).GetComponent<BulletMovement>();
                     bulletMov.direction = turretTransform.right;
                 }
                 break;
@@ -46,7 +46,10 @@ public class TurretShooting : MonoBehaviour
                 if (currentCooldown >= cooldown)
                 {
                     currentCooldown = 0;
-                    BulletMovement bulletMov = Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity).GetComponent<BulletMovement>();
+                    BulletMovement bulletMov = Instantiate(bullet, bulletSpawnPoints[0].position, Quaternion.identity).GetComponent<BulletMovement>();
+                    bulletMov.direction = turretTransform.right;
+
+                    bulletMov = Instantiate(bullet, bulletSpawnPoints[1].position, Quaternion.identity).GetComponent<BulletMovement>();
                     bulletMov.direction = turretTransform.right;
                 }
                 break;

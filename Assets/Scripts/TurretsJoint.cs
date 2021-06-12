@@ -22,7 +22,7 @@ public class TurretsJoint : MonoBehaviour
 
             foreach (TurretManager trt in turrets)
             {
-                if (trt.level == turret.level)
+                if (trt.level == turret.level && trt.turretShooting.type == turret.turretShooting.type)
                 {
                     isDeleted = true;
                     turret.destroy();
@@ -55,6 +55,6 @@ public class TurretsJoint : MonoBehaviour
         turret.offset.x = Mathf.RoundToInt(turretTransform.localPosition.x);
         turret.offset.y = Mathf.RoundToInt(turretTransform.localPosition.y);
         turretTransform.localPosition = turret.offset;
-        turretTransform.localRotation = Quaternion.Euler(0, 0, 0);
+        turretTransform.localRotation = turret.rotation;
     }
 }

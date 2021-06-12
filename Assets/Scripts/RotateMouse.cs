@@ -13,7 +13,7 @@ public class RotateMouse : MonoBehaviour
 
     private Vector2 targetDestination;
     private float targetRotation;
-    //private Vector2 targetPosition;
+
     void Start()
     {
         playerTransform = GetComponent<Transform>();

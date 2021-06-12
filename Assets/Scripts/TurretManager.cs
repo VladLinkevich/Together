@@ -5,14 +5,21 @@ using UnityEngine;
 public class TurretManager : MonoBehaviour
 {
     [HideInInspector]public TurretShooting turretShooting;
+    public bool randomRotate;
 
     public int level;
 
     public Vector2 offset;
+    public Quaternion rotation;
     void Start()
     {
         turretShooting = GetComponent<TurretShooting>();
 
+        if (randomRotate)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 3) * 90f);
+            rotation = transform.rotation;
+        }
         level = getRandomLevel();
     }
 

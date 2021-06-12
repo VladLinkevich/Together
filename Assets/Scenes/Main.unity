@@ -140,7 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d65ff1eaa234724c97d56af3d8d956a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 1146606310097478963, guid: 08b9596c98f080549b3e68ff4f207a73, type: 3}
+  turrets:
+  - {fileID: 1146606310097478963, guid: 08b9596c98f080549b3e68ff4f207a73, type: 3}
+  - {fileID: 1146606310097478963, guid: 3a464310cea8dee439d2bfb19764cc05, type: 3}
   spawnTimeBetween: 1
   spawnTimeFirst: 2
   rangeX: 45
@@ -257,6 +259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5060413350974337350, guid: f8e3f30a86864e9459eb083f60621393, type: 3}
+      propertyPath: randomRotate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5505026064649219516, guid: f8e3f30a86864e9459eb083f60621393, type: 3}
       propertyPath: m_Name
       value: Player
