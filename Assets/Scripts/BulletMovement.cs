@@ -10,6 +10,8 @@ public class BulletMovement : MonoBehaviour
     public Vector2 direction;
 
     public float lifetime;
+
+    private float currentLifetime;
     void Start()
     {
         bulletTransform = GetComponent<Transform>();   
@@ -18,5 +20,8 @@ public class BulletMovement : MonoBehaviour
     void FixedUpdate()
     {
         bulletTransform.Translate(direction * speed * Time.deltaTime);
+
+        currentLifetime += Time.fixedDeltaTime;
+        if (currentLifetime > lifetime) Destroy(gameObject);
     }
 }
