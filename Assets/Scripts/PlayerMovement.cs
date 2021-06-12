@@ -19,6 +19,6 @@ public class PlayerMovement : MonoBehaviour
         direction.x = Input.GetAxis("Horizontal");
         direction.y = Input.GetAxis("Vertical");
 
-        playerTransform.Translate(direction * speed * Time.deltaTime);
+        playerTransform.Translate(playerTransform.InverseTransformVector(direction) * speed * Time.deltaTime);
     }
 }

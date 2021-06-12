@@ -55,5 +55,6 @@ public class TurretsJoint : MonoBehaviour
         turret.offset.x = Mathf.RoundToInt(turretTransform.localPosition.x);
         turret.offset.y = Mathf.RoundToInt(turretTransform.localPosition.y);
         turretTransform.localPosition = turret.offset;
+        turretTransform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 }
