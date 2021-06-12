@@ -10,7 +10,7 @@ public class TurretManager : MonoBehaviour
 
     void Start()
     {
-        
+        level = getRandomLevel();
     }
 
     public void addLevel()
@@ -22,5 +22,10 @@ public class TurretManager : MonoBehaviour
     public void destroy()
     {
         Destroy(gameObject);
+    }
+
+    private int getRandomLevel()
+    {
+        return Random.Range(1, TurretsSpawning.maxLevelSpawningTurrets + 1);
     }
 }

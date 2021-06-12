@@ -6,6 +6,8 @@ public class TurretsSpawning : MonoBehaviour
 {
     private Transform mapTransform;
 
+    public static int maxLevelSpawningTurrets;
+
     public GameObject turret;
 
     public float spawnTimeBetween;
@@ -19,10 +21,13 @@ public class TurretsSpawning : MonoBehaviour
     private Vector2 lastSpawnPosition;
     private GameObject lastSpawnObject;
 
+    private int countSpawningTurrets;
+
     void Start()
     {
         mapTransform = GetComponent<Transform>();
-        
+        maxLevelSpawningTurrets = 1;
+
         startSpawnTurrets();
     }
 
@@ -39,6 +44,11 @@ public class TurretsSpawning : MonoBehaviour
         spawnCoroutine = StartCoroutine(spawnTurretsCoroutine());
     }
 
+    void stopSpawnTurrets()
+    {
+        StopCoroutine(spawnCoroutine);
+    }
+
     private IEnumerator spawnTurretsCoroutine()
     {
         yield return new WaitForSeconds(spawnTimeFirst);
@@ -47,6 +57,13 @@ public class TurretsSpawning : MonoBehaviour
         {
             lastSpawnObject = Instantiate(turret, getRandomPosition(), Quaternion.identity);
             lastSpawnObject.transform.parent = mapTransform;
+
+            countSpawningTurrets++;
+            if (countSpawningTurrets != 0 && countSpawningTurrets % 5 == 0)
+            {
+                maxLevelSpawningTurrets++;
+            }
+
             yield return new WaitForSeconds(spawnTimeBetween);
         }
     }
